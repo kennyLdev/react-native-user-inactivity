@@ -9,7 +9,8 @@
     "prebuild": "npm run clean && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "lib",
