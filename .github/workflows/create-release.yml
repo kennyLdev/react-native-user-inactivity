@@ -3,7 +3,7 @@ name: Release new version
 on:
   pull_request:
     branches:
-      - main
+      - master
     types: closed
 
 jobs:
