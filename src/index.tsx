@@ -1,3 +1,8 @@
+import {
+  defaultTimeoutHandler,
+  TimeoutHandler,
+  useTimeout,
+} from '@kennyldev/usetimeout-react-hook';
 import React, {
   useEffect,
   useRef,
@@ -10,11 +15,6 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {
-  defaultTimeoutHandler,
-  TimeoutHandler,
-  useTimeout,
-} from 'usetimeout-react-hook';
 
 const defaultTimeForInactivity = 10000;
 const defaultStyle: ViewStyle = {
@@ -115,7 +115,7 @@ const UserInactivity: React.FC<UserInactivityProps> = ({
   const cancelTimer = useTimeout(() => {
     setActive(false);
     onAction(false);
-    // @ts-ignore
+    // @ts-expect-error types differ
   }, timeout, actualTimeoutHandler, [date, timeout]);
 
   const isFirstRender = useRef(true);
@@ -181,6 +181,7 @@ const UserInactivity: React.FC<UserInactivityProps> = ({
   /**
    * The PanResponder instance is initialized only once.
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [panResponder, _] = useState(
     PanResponder.create({
       onMoveShouldSetPanResponderCapture: resetTimerForPanResponder,

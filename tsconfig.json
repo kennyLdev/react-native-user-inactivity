@@ -2,25 +2,23 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./lib",
-    "target": "es2017",
-    "module": "es2015",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
     "outDir": "./lib",
     "baseUrl": ".",
     "sourceMap": false,
     "experimentalDecorators": true,
     "jsx": "react-native",
-    "lib": ["es2017"],
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "noEmitHelpers": true,
     "importHelpers": true,
     "strict": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

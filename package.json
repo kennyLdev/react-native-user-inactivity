@@ -1,5 +1,5 @@
 {
-  "name": "react-native-user-inactivity",
+  "name": "@kennyldev/react-native-user-inactivity",
   "version": "1.2.0",
   "description": "React Native component that notifies if the user is active or not",
   "main": "lib/index.js",
@@ -9,7 +9,8 @@
     "prebuild": "npm run clean && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "lint": "tslint -c tslint.json -p tsconfig.json"
+    "lint": "eslint",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "lib",
@@ -24,26 +25,35 @@
     "tracking",
     "inactivity"
   ],
-  "author": "Alberto Schiabel (https://github.com/jkomyno)",
+  "author": "Kenneth Lindelof <developer@kennyl.dev>",
+  "contributors": [
+    {
+      "name": "Alberto Schiabel",
+      "email": "alberto.schiabel@gmail.com",
+      "url": "https://jkomyno.github.io/"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
-    "usetimeout-react-hook": "^0.1.2"
+    "@kennyldev/usetimeout-react-hook": "^1.0.1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/react-native": "^0.63.46",
-    "@types/react-native-background-timer": "^2.0.0",
-    "react-native-background-timer": "^2.4.1",
-    "rimraf": "^2.6.3",
-    "tslib": "^1.10.0",
-    "tslint": "^5.18.0",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.5.3",
-    "ws": ">=3.3.1"
+    "@boterop/react-native-background-timer": "^2.5.2",
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.1",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.3",
+    "globals": "^15.14.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-native": "^0.63.0",
-    "react-native-background-timer": "^2.4.1"
+    "@boterop/react-native-background-timer": "^2.5.2",
+    "react": "^18.3.1",
+    "react-native": "^0.76.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
